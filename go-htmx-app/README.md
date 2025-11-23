@@ -2,6 +2,7 @@ Go HTMX Application
 This project is a simple web application built using Go (Golang) and HTMX. It demonstrates how to create a dynamic web page that can load content without a full page refresh.
 
 Project Structure
+------------------
 go-htmx-app
 ├── src
 │   ├── main.go          # Entry point of the application
