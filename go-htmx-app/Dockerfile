@@ -19,7 +19,7 @@
 
 ###########################################
 # Build the manager binary
-FROM registry.artifactory.intra.bec.dk/paas-tools/paas-go-toolset:1.24.1-3 AS builder
+FROM registry.stolarware.pl/paas-tools/paas-go-toolset:1.24.1-3 AS builder
 ARG TARGETOS
 ARG TARGETARCH
 
@@ -52,7 +52,7 @@ RUN CGO_ENABLED=0 GOOS=${TARGETOS:-linux} GOARCH=${TARGETARCH} go build -a -o se
 # Use distroless as minimal base image to package the manager binary
 # Refer to https://github.com/GoogleContainerTools/distroless for more details
 # FROM gcr.io/distroless/static:nonroot
-FROM registry.artifactory.intra.bec.dk/ubi9-minimal:9.6-1751286687
+FROM registry.stolarware.pl/ubi9-minimal:9.6-1751286687
 
 # copy certificates
 COPY certificates/* /etc/pki/ca-trust/source/anchors/
